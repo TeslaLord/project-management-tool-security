@@ -1,0 +1,10 @@
+fastapi
+python-multipart
+uvicorn[standard]
+python-jose[crytography]
+passlib[bcrypt]
+psycopg2-binary
+requests
+sympy
+numpy
+docopt
