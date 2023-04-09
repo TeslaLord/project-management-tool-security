@@ -28,9 +28,9 @@ steps:
   
 availableSecrets:
   secretManager:
-  - versionName: projects/friendly-hangar-380200/secrets/teslalord/versions/docker-password
+  - versionName: projects/friendly-hangar-380200/secrets/docker-password/versions/1
     env: 'PASSWORD'
-  - versionName: projects/friendly-hangar-380200/secrets/teslalord/versions/docker-username
+  - versionName: projects/friendly-hangar-380200/secrets/docker-username/versions/1
     env: 'USERNAME'
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
