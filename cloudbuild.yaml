@@ -44,7 +44,7 @@ substitutions:
     _REPO_NAME: project-management-tool-security
     
     # Developers ONLY change
-    _VERSION: first
+    _VERSION: second
     
 options:
     substitution_option: 'ALLOW_LOOSE'
