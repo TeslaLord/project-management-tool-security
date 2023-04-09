@@ -1,4 +1,8 @@
 steps:
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker login --username=$$USERNAME --password=$$PASSWORD']
+  secretEnv: ['USERNAME', 'PASSWORD']
 #First Clone from Google Cloud Source Repository  
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/TeslaLord/project-management-tool-security.git']
@@ -22,6 +26,12 @@ steps:
   - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
   
+availableSecrets:
+  secretManager:
+  - versionName: projects/friendly-hangar-380200/secrets/teslalord/versions/docker-password
+    env: 'PASSWORD'
+  - versionName: projects/friendly-hangar-380200/secrets/teslalord/versions/docker-username
+    env: 'USERNAME'
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
     _PROJECT: my-first-project
