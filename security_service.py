@@ -232,7 +232,7 @@ def make_get_request(url, params=None):
     else:
         return f'Request failed with status code {response.status_code}'
 
-@app.get("/get_users")
+@app.get("/get_user")
 async def get_users(current_user = Depends(get_current_active_user)):
     url = f'{BACKEND_URL}/get_users'
     return make_get_request(url)
