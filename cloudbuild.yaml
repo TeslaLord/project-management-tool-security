@@ -21,7 +21,7 @@ steps:
   - 'set'
   - 'image'
   - 'deployment/${_DEPLOYMENTNAME}'
-  - '${_CONTAINERNAME}=gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}'
+  - '${_CONTAINERNAME}=docker.io/teslalord/${_CONTAINERNAME}:${_VERSION}'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=${_ZONE}'
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
@@ -44,7 +44,7 @@ substitutions:
     _REPO_NAME: project-management-tool-security
     
     # Developers ONLY change
-    _VERSION: latest
+    _VERSION: first
     
 options:
     substitution_option: 'ALLOW_LOOSE'
